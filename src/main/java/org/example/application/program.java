@@ -23,8 +23,14 @@ public class program {
 //
 //        em.getTransaction().commit(); //confirma transaçoes
 
-        Pessoa p = em.find(Pessoa.class, 1);
-        System.out.println(p);
+//        Pessoa p = em.find(Pessoa.class, 1);
+//        System.out.println(p);
+
+        Pessoa p = em.find(Pessoa.class, 2);
+
+        em.getTransaction().begin();
+        em.remove(p);
+        em.getTransaction().commit();
 
         System.out.println("Pessoa Criado com sucesso!");
         em.close();
